@@ -1,64 +1,84 @@
-interface HomeSectionProps {
-  onMoreAboutMe: () => void;
-}
+import MotionReveal from "@/components/MotionReveal";
 
-export default function HomeSection({ onMoreAboutMe }: HomeSectionProps) {
+export default function HomeSection() {
   return (
-    <section className="max-w-4xl w-full">
-      {/* Greeting */}
-      <p className="text-[11px] uppercase tracking-[0.24em] text-neutral-500 mb-4 font-medium">
-        Hello, I&apos;m
-      </p>
-      <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-neutral-900 mb-3 tracking-[-0.02em] leading-[0.94]">
-        Ashish Sangale
-      </h1>
-      <h2 className="text-xl text-neutral-700 mb-8 font-medium tracking-tight">
-        Software Engineer
-      </h2>
+    <section className="w-full">
+      <div className="min-h-screen relative flex items-center justify-center text-center">
+        <div>
+          <MotionReveal>
+            <p className="kicker">Hello, I&apos;m</p>
+            <h1 className="editorial-title text-5xl sm:text-6xl lg:text-7xl mt-4 leading-[0.9]">
+              Ashish Sangale
+            </h1>
+            <h2 className="text-xl text-neutral-700 mt-4 font-medium tracking-tight">
+              AI/ML Engineer + Software Engineer
+            </h2>
+          </MotionReveal>
 
-      <div className="w-full h-px bg-neutral-300 mb-8" />
+          <MotionReveal className="mt-8" delayMs={100}>
+            <div className="statement-band">
+              I build systems that scale from frontier ML to production-grade platforms.
+            </div>
+          </MotionReveal>
+        </div>
 
-      <p className="text-base text-neutral-700 leading-8 mb-4 max-w-3xl">
-        I&apos;m a software engineer who loves building things that work — really work — at scale, under pressure, and in production where it actually matters.
-      </p>
-      <p className="text-[15px] text-neutral-600 leading-8 mb-6 max-w-3xl">
-        My career has taken me across the full spectrum of modern software: from crafting responsive, user-friendly frontends for 500K+ active users on JioSaavn and JioCinema, to architecting payment infrastructure handling 100K+ monthly merchant transactions at Airpay, to optimizing distributed LLM training pipelines on the Cerebras Wafer-Scale Engine — one of the most powerful AI accelerators in the world. Each chapter has deepened my belief that great engineering isn&apos;t just about writing clean code. It&apos;s about understanding the problem deeply enough to build something that genuinely changes how people work.
-      </p>
-      <p className="text-[15px] text-neutral-600 leading-8 mb-6 max-w-3xl">
-        At Cerebras, I&apos;ve been working at the frontier of ML infrastructure — tuning training pipelines for 30% throughput gains, building observability systems that catch regressions before they hit production, and designing agent-driven stress-testing frameworks that use AI to validate AI. It&apos;s the kind of work that demands both rigor and creativity, and I love every bit of it.
-      </p>
-      <p className="text-[15px] text-neutral-600 leading-8 mb-6 max-w-3xl">
-        On the full stack side, I bring the same care and intentionality. I&apos;ve built scalable REST and GraphQL APIs, decomposed monolithic backends into microservices, and designed data layers that stay fast and reliable as usage grows. I care about the experience on both ends — the engineer maintaining the system and the user depending on it
-      </p>
-      <p className="text-[15px] text-neutral-600 leading-8 max-w-3xl">
-        I&apos;m currently looking for my next opportunity — ideally somewhere that values technical depth, moves with ambition, and cares about the impact of what it ships. If that sounds like your team, I&apos;d love to connect
-      </p>
+        <div className="scroll-cue absolute bottom-6 z-10" aria-hidden="true">
+          <span>Scroll</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </div>
+      </div>
 
-      {/* Quick stats */}
-      <div className="mt-10 pt-8 border-t border-neutral-200 flex flex-wrap gap-8 sm:gap-12">
-        {[
-          { value: "4+", label: "Years experience" },
-          { value: "20+", label: "Projects shipped" },
-          { value: "10+", label: "Technologies" },
-        ].map((stat) => (
-          <div key={stat.label} className="min-w-[130px]">
-            <p className="text-3xl font-bold text-neutral-900 leading-none">{stat.value}</p>
-            <p className="text-xs uppercase tracking-[0.16em] text-neutral-500 mt-2">
-              {stat.label}
+      <MotionReveal className="mt-24" delayMs={160}>
+        <p className="impact-label mb-4">Impact Highlights</p>
+        <div className="impact-grid">
+          <div className="impact-card">
+            <span className="impact-pill">ML infrastructure</span>
+            <div className="impact-line" />
+            <p className="impact-number">30%</p>
+            <p className="impact-title">Faster training</p>
+            <p className="impact-desc">
+              Optimized distributed LLM pipelines on WSE for measurable throughput gains.
             </p>
           </div>
-        ))}
-      </div>
+          <div className="impact-card">
+            <span className="impact-pill">Payments</span>
+            <div className="impact-line" />
+            <p className="impact-number">100K+</p>
+            <p className="impact-title">Transactions</p>
+            <p className="impact-desc">
+              Infrastructure powering monthly merchant volume at scale.
+            </p>
+          </div>
+          <div className="impact-card">
+            <span className="impact-pill">Frontend</span>
+            <div className="impact-line" />
+            <p className="impact-number">500K+</p>
+            <p className="impact-title">Active users</p>
+            <p className="impact-desc">
+              Performance wins across streaming products at production scale.
+            </p>
+          </div>
+        </div>
+      </MotionReveal>
 
-      <div className="mt-10 flex justify-end">
-        <button
-          type="button"
-          onClick={onMoreAboutMe}
-          className="inline-flex items-center rounded-lg bg-neutral-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-neutral-700"
-        >
-          More about me
-        </button>
-      </div>
+      <MotionReveal className="mt-6" delayMs={220}>
+        <div className="impact-stats">
+          <div className="impact-stat-card">
+            <p className="impact-stat-number">4+</p>
+            <p className="impact-stat-label">Years experience</p>
+          </div>
+          <div className="impact-stat-card">
+            <p className="impact-stat-number">20+</p>
+            <p className="impact-stat-label">Projects shipped</p>
+          </div>
+          <div className="impact-stat-card">
+            <p className="impact-stat-number">10+</p>
+            <p className="impact-stat-label">Technologies</p>
+          </div>
+        </div>
+      </MotionReveal>
     </section>
   );
 }

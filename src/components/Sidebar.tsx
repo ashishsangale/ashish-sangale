@@ -55,10 +55,10 @@ interface SidebarProps {
 
 export default function Sidebar({ active, onChange }: SidebarProps) {
   return (
-    <aside className="w-80 h-full flex flex-col py-10 px-8 bg-[#f8f8f4]/90 border-r border-neutral-200 shrink-0">
+    <aside className="w-[21rem] h-full flex flex-col py-10 px-8 bg-white/60 border-r border-black/10 shrink-0 backdrop-blur">
       {/* Photo */}
-      <div className="mb-12 flex justify-center">
-        <div className="relative w-48 h-48 rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200 shadow-sm">
+      <div className="mb-8 flex justify-center">
+        <div className="relative w-44 h-44 rounded-2xl overflow-hidden bg-neutral-100 border border-black/10 shadow-sm">
           <Image
             src={profileImage}
             alt="Ashish Sangale"
@@ -75,8 +75,16 @@ export default function Sidebar({ active, onChange }: SidebarProps) {
         </div>
       </div>
 
+      <div className="text-center mb-8">
+        <p className="kicker">Portfolio</p>
+        <h1 className="text-2xl font-semibold tracking-tight text-neutral-900 mt-2">
+          Ashish Sangale
+        </h1>
+        <p className="text-sm text-neutral-600 mt-1">AI/ML Engineer + SWE</p>
+      </div>
+
       {/* Divider */}
-      <div className="w-full h-px bg-neutral-200 mb-8" />
+      <div className="w-full h-px bg-black/10 mb-8" />
 
       {/* Nav */}
       <nav className="w-full flex flex-col gap-2">
@@ -84,7 +92,7 @@ export default function Sidebar({ active, onChange }: SidebarProps) {
           <button
             key={item.id}
             onClick={() => onChange(item.id)}
-            className={`w-full text-left px-4 py-2.5 text-sm uppercase tracking-[0.14em] rounded-full transition-all duration-200 ease-out ${
+            className={`w-full text-left px-4 py-2.5 text-xs uppercase tracking-[0.3em] rounded-full transition-all duration-200 ease-out ${
               active === item.id
                 ? "bg-neutral-900 text-white shadow-sm"
                 : "text-neutral-600 hover:bg-neutral-900/10 hover:text-neutral-900 hover:translate-x-0.5"
@@ -95,7 +103,7 @@ export default function Sidebar({ active, onChange }: SidebarProps) {
         ))}
       </nav>
 
-      <div className="mt-auto pt-8 border-t border-neutral-200">
+      <div className="mt-auto pt-8 border-t border-black/10">
         <div className="flex items-center justify-center gap-3">
           {socialLinks.map((item) => (
             <a
@@ -104,7 +112,7 @@ export default function Sidebar({ active, onChange }: SidebarProps) {
               target={item.href.startsWith("mailto:") ? undefined : "_blank"}
               rel={item.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
               aria-label={item.label}
-              className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-neutral-200 bg-white/70 text-neutral-500 shadow-sm transition-all duration-200 ease-out hover:scale-[1.04] hover:border-neutral-400 hover:bg-white hover:text-neutral-900 hover:shadow-[0_0_0_6px_rgba(26,26,26,0.05)]"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-black/10 bg-white/80 text-neutral-500 shadow-sm transition-all duration-200 ease-out hover:scale-[1.04] hover:border-black/30 hover:bg-white hover:text-neutral-900 hover:shadow-[0_0_0_6px_rgba(18,18,18,0.06)]"
             >
               {item.icon}
             </a>
