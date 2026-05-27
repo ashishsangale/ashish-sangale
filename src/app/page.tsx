@@ -3,10 +3,12 @@ import ResumeSection from "@/components/sections/Resume";
 import ProjectsSection from "@/components/sections/Projects";
 import ContactSection from "@/components/sections/Contact";
 import MotionReveal from "@/components/MotionReveal";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Portfolio() {
   return (
     <div className="portfolio-canvas min-h-screen">
+      <ThemeToggle />
       <main className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-6 pb-12 sm:px-10 sm:pb-14 lg:px-14">
         <MotionReveal className="px-8 sm:px-12">
           <HomeSection />

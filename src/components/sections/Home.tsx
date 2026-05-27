@@ -4,7 +4,7 @@ export default function HomeSection() {
   return (
     <section className="w-full">
       <div className="min-h-screen relative flex items-center justify-center text-center">
-        <div>
+        <div className="flex flex-col items-center text-center">
           <MotionReveal>
             <p className="kicker">Hello, I&apos;m</p>
             <h1 className="editorial-title text-5xl sm:text-6xl lg:text-7xl mt-4 leading-[0.9]">

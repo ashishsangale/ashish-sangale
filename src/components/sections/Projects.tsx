@@ -2,7 +2,7 @@ const project = {
   title: "EduSummarizer",
   description:
     "EduSummarizer turns dense academic content into clear, structured summaries with a RAG pipeline and a fast, interactive UI. It combines retrieval, prompt orchestration, and evaluation-friendly outputs to keep summaries grounded in source material.",
-  tags: ["RAG", "Vector Database", "OpenAI API", "Streamlit"],
+  tags: ["RAG", "Vector Database", "Cerebras API", "TypeScript", "MongoDB", "Next.Js"],
   github: "https://github.com/ashishsangale/EduSummarizer",
   demo: "https://youtu.be/x90i9oiSYYA",
   embed: "https://www.youtube.com/embed/x90i9oiSYYA",

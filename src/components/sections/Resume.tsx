@@ -16,12 +16,12 @@ const skills = [
   {
     title: "Languages",
     highlighted: ["Python", "JavaScript"],
-    items: ["Java", "C", "SQL", "PostgreSQL", "MySQL"],
+    items: ["Java", "C#", "SQL", "PostgreSQL", "MySQL"],
   },
   {
     title: "Platforms & Frameworks",
     highlighted: ["React", "Node.js", "FastAPI"],
-    items: ["REST", "GraphQL", "AWS (SQS, ELB, S3, EC2)", "Docker", "Kubernetes"],
+    items: ["REST", "GraphQL", "AWS (SQS, ELB, S3, EC2, Lambda)", "Docker", "Kubernetes"],
   },
   {
     title: "Tools & Technologies",
@@ -256,7 +256,7 @@ export default function ResumeSection() {
                   </span>
                 ))}
                 {group.items.map((skill) => (
-                  <span key={skill} className="skill-tag">
+                  <span key={skill} className="skill-tag hi">
                     {skill}
                   </span>
                 ))}
