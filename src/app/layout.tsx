@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bodoni_Moda, DM_Serif_Display, Space_Grotesk } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const display = Bodoni_Moda({
@@ -36,6 +37,7 @@ export default function RootLayout({
         className={`antialiased ${display.variable} ${body.variable} ${serif.variable}`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
